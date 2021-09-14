@@ -1,0 +1,123 @@
+
+
+*, *::after, *::before{
+    box-sizing: border-box;
+    font-family: 'Suez One', serif;
+}
+
+body{
+   background-image: linear-gradient(to right , rgba(31, 192, 241, 0.74), rgba(31, 192, 241, 0));
+    display: flex;
+    align-items: center;
+    min-height: 100hv;
+    overflow: hidden;
+
+}
+
+h1{
+    color: #fff;
+    padding-left: 50px;
+}
+span{
+    color: aquamarine;
+}
+/*forma do relógio*/
+.clock{
+    width: 400px;
+    height: 400px;
+    background-color:rgba(25, 195, 247, 0.74);
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: inset 0px 0px 20px #ffff;
+    position: relative;
+    margin:200px auto 10px auto;
+    color: #fff;
+
+}
+
+/*posicionamento geral dos numeros*/
+.clock .number{
+    --rotation: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotation));
+    font-size: 1.5rem;
+    padding-top: 5px;
+    
+}
+/*posicionando os numeros em graus*/
+
+.clock .number1{--rotation: 30deg;}
+.clock .number2{--rotation: 60deg;}
+.clock .number3{--rotation: 90deg;}
+.clock .number4{--rotation: 120deg;}
+.clock .number5{--rotation: 150deg;}
+.clock .number6{--rotation: 180deg;}
+.clock .number7{--rotation: 210deg;}
+.clock .number8{--rotation: 240deg;}
+.clock .number9{--rotation: 270deg;}
+.clock .number10{--rotation: 300deg;}
+.clock .number11{--rotation: 330deg;}
+
+
+/*posicionamento geral do ponteiro*/
+.clock .hand{
+    --rotation:0;
+    position:absolute;
+    bottom: 50%;
+    left: 50%;    
+    border: 1px solid white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transform-origin: bottom;
+    z-index: 10;
+    transform: translateX(-50%) rotate(calc(var(--rotation)* 1deg));
+}
+
+/*ponteiro do segundo*/
+.clock .hand.second{
+    width: 3px;
+    height: 45%;
+    background-color: red;
+}
+
+/*ponteiro do minuto*/
+.clock .hand.minute{
+    width: 7px;
+    height: 40%;
+    background-color:rgba(25, 195, 247, 0.74);
+    box-shadow: inset 0px 0px 5px #ffff;;
+    
+}
+
+/*ponteiro da hora*/
+.clock .hand.hour{
+    width: 10px;
+    height: 35%;
+    background-color:rgba(25, 195, 247, 0.74);
+    box-shadow: inset 0px 0px 6px #ffff;;
+}
+
+/*Bolinha do ponteiro*/
+
+.clock::after{
+    content: '';
+    position: absolute;
+    background-color:rgba(25, 195, 247, 0.74);
+    box-shadow: inset 0px 0px 5px #ffff;;
+    z-index: 11;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+footer{
+    position: absolute;
+    margin:100px 300px 300px 150px;
+    
+}
